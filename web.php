@@ -1,7 +1,11 @@
 <?php
-
+namespace App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\task;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +18,8 @@ use App\Http\Controllers\task;
 |
 */
 
-Route::get('home', [task::class,'index']);
-Route::get('about', [task::class,'about']);
-Route::get('contact', [task::class,'contact']);
+
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
